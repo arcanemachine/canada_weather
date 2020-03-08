@@ -3,6 +3,7 @@
 # Obtain weather data. Use local if available and not_stale.
 # Otherwise, use external data
 
+
 import os.path
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -53,33 +54,25 @@ def get_url_and_parse():
     tree = ET.parse("s0000661_e.xml")
     return tree.getroot()
 
-def current(query):
-    # if exists local data...
-    if os.path.isfile('s0000661_e.xml'):
+# if exists local data...
+if os.path.isfile('s0000661_e.xml'):
     
-        # and if local data isn't stale
-        if data_is_fresh():
+    # and if local data isn't stale
+    if data_is_fresh():
 
-            # then use local data
-            tree = ET.parse('s0000661_e.xml')
-            root = tree.getroot()
+        # then use local data
+        tree = ET.parse('s0000661_e.xml')
+        root = tree.getroot()
     
-        # otherwise, get new data
-        else:
-            root = get_url_and_parse()
-
-    # if no file exists, fetch and use new data
+    # otherwise, get new data
     else:
-        
         root = get_url_and_parse()
 
-    if query == "root":
-        return root
-    if query == "temperature":
-        return root[5][5].text
-    else:
-        return "nothing_found"
+# if no file exists, fetch and use new data
+else:
     
+    root = get_url_and_parse()
+
 
 # Print some stats
-# print(f"Current temperature in {city_name}, {province}: {root[5][5].text} degrees Celsius")
+print(f"Current temperature in {city_name}, {province}: {root[5][5].text} degrees Celsius")
