@@ -38,6 +38,7 @@ def data_is_fresh():
 language = "e"
 province = "AB"
 site_code = f"s0000661_{language}"
+city_name = "Grande Prairie"
 
 
 def get_url_and_parse():
@@ -70,8 +71,8 @@ if os.path.isfile('s0000661_e.xml'):
 # if no file exists, fetch and use new data
 else:
     
-    root = get_url_and_parse(root)
+    root = get_url_and_parse()
 
 
 # Print some stats
-print(f"Current temperature: {root[5][5].text} degrees Celsius")
+print(f"Current temperature in {city_name}, {province}: {root[5][5].text} degrees Celsius")

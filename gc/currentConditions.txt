@@ -1,0 +1,12 @@
+0. station, {'code': 'yqu', 'lat': '55.18N', 'lon': '118.88W'}
+1. dateTime, {'name': 'observation', 'zone': 'UTC', 'UTCOffset': '0'}
+2. dateTime, {'name': 'observation', 'zone': 'MDT', 'UTCOffset': '-6'}
+3. condition, {}
+4. iconCode, {'format': 'gif'}
+5. temperature, {'unitType': 'metric', 'units': 'C'}
+6. dewpoint, {'unitType': 'metric', 'units': 'C'}
+7. windChill, {'unitType': 'metric'}
+8. pressure, {'unitType': 'metric', 'units': 'kPa', 'change': '0.05', 'tendency': 'falling'}
+9. visibility, {'unitType': 'metric', 'units': 'km'}
+10. relativeHumidity, {'units': '%'}
+11. wind, {}
